@@ -2,10 +2,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superAgentFactory', 'querystring'], factory);
+    define(['superAgentProxy', 'querystring'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superAgentFactory'), require('querystring'));
+    module.exports = factory(require('superAgentProxy'), require('querystring'));
   } else {
     // Browser globals (root is window)
     if (!root.{{moduleName}}) {
@@ -344,7 +344,8 @@
       // SuperAgent does not always produce a body; use the unparsed response as a fallback
       data = response.text;
     }
-    return exports.convertToType(data, returnType);
+    return data;
+	//return exports.convertToType(data, returnType);
   };
 
 {{#emitJSDoc}}{{^usePromises}}  /**
