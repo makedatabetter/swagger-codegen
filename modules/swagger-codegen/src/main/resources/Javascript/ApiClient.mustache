@@ -35,6 +35,7 @@
      * @default {{{basePath}}}
      */
 {{/emitJSDoc}}    this.basePath = '{{{basePath}}}'.replace(/\/+$/, '');
+                  this.serviceName = '';
 
 {{#emitJSDoc}}    /**
      * The authentication methods to be included for all API calls.
@@ -374,13 +375,13 @@
    * @param {module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient~callApiCallback} callback The callback function.{{/usePromises}}
    * @returns {{#usePromises}}{Promise} A {@link https://www.promisejs.org/|Promise} object{{/usePromises}}{{^usePromises}}{Object} The SuperAgent request object{{/usePromises}}.
    */
-{{/emitJSDoc}}  exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
+{{/emitJSDoc}}  exports.prototype.callApi = function callApi(path, httpMethod, operationId, pathParams,
       queryParams, collectionQueryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
       returnType{{^usePromises}}, callback{{/usePromises}}) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-    var request = superagent(httpMethod, url);
+    var request = superagent(httpMethod, url, this.serviceName, operationId);
 
     // apply authentications
     this.applyAuthToRequest(request, authNames);

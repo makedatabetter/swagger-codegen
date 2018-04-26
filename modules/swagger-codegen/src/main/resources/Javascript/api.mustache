@@ -87,7 +87,7 @@
       var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
 
       return this.apiClient.callApi(
-        '<&path>', '<httpMethod>',
+        '<&path>', '<httpMethod>', '<operationId>',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType<^usePromises>, callback</usePromises>
       );
