@@ -381,7 +381,7 @@
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-    var request = superagent(httpMethod, url, this.serviceName, operationId);
+    var request = superagent(httpMethod, url, this.serviceName, operationId, pathParams);
 
     // apply authentications
     this.applyAuthToRequest(request, authNames);
