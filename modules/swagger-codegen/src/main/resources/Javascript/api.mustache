@@ -49,8 +49,8 @@
      * @param {Object} opts Optional parameters<#allParams><^required>
      * @param {<&vendorExtensions.x-jsdoc-type>} opts.<paramName> <description><#defaultValue> (default to <.>)</defaultValue></required></allParams></hasOptionalParams><^usePromises>
      * @param {module:<#invokerPackage><&invokerPackage>/</invokerPackage><#apiPackage><&apiPackage>/</apiPackage><&classname>~<operationId>Callback} callback The callback function, accepting three arguments: error, data, response<#returnType>
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}</returnType></usePromises><#usePromises>
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}<#returnType>, with an object containing data of type {@link <&vendorExtensions.x-jsdoc-type>} and HTTP response</returnType><^returnType>, with an object containing HTTP response</returnType></usePromises>
+     * data is of type: json</returnType></usePromises><#usePromises>
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}<#returnType>, with an object containing data of type json and HTTP response</returnType><^returnType>, with an object containing HTTP response</returnType></usePromises>
      */
 </emitJSDoc>    this.<operationId><#usePromises>WithHttpInfo</usePromises> = function(<vendorExtensions.x-codegen-argList>) {<#hasOptionalParams>
       opts = opts || {};</hasOptionalParams>
@@ -84,7 +84,7 @@
       var authNames = [<#authMethods>'<name>'<#hasMore>, </hasMore></authMethods>];
       var contentTypes = [<#consumes>'<& mediaType>'<#hasMore>, </hasMore></consumes>];
       var accepts = [<#produces>'<& mediaType>'<#hasMore>, </hasMore></produces>];
-      var returnType = <#returnType><&returnType></returnType><^returnType>null</returnType>;
+      var returnType = 'json';
 
       return this.apiClient.callApi(
         '<&path>', '<httpMethod>', '<operationId>',
@@ -102,8 +102,8 @@
      * @param {Object} opts Optional parameters<#allParams><^required>
      * @param {<&vendorExtensions.x-jsdoc-type>} opts.<paramName> <description><#defaultValue> (default to <.>)</defaultValue></required></allParams></hasOptionalParams><^usePromises>
      * @param {module:<#invokerPackage><&invokerPackage>/</invokerPackage><#apiPackage><&apiPackage>/</apiPackage><&classname>~<operationId>Callback} callback The callback function, accepting three arguments: error, data, response<#returnType>
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}</returnType></usePromises><#usePromises>
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}<#returnType>, with data of type {@link <&vendorExtensions.x-jsdoc-type>}</returnType></usePromises>
+     * data is of type: json</returnType></usePromises><#usePromises>
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}<#returnType>, with data of type json</returnType></usePromises>
      */
 </emitJSDoc>    this.<operationId> = function(<vendorExtensions.x-codegen-argList>) {
       return this.<operationId>WithHttpInfo(<vendorExtensions.x-codegen-argList>)
